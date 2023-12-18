@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  #数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #开启连接池
+    url: jdbc:mysql://localhost:3306/studb #数据库地址
+    username: root #账号
+    password: 132123 #密码
+mybatis:
+  configuration:  # setting
+    auto-mapping-behavior: full #全自动映射
+    map-underscore-to-camel-case: true #开启驼峰映射
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl #日志打印方式
+  type-aliases-package: org.dalaoshi.pojo #用于设置类型别名包扫描路径的属性
+  mapper-locations: classpath:mapper/*.xml # 再resource文件下寻找mapper.xml文件
